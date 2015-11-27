@@ -2,9 +2,9 @@
 
 /**
 * FUNCTION: isEven( x )
-*	Checks whether a function is an even number
+*	Checks whether an input value is an even number.
 *
-* @param {Number} x - input value
+* @param {*} x - input value
 * @returns {Boolean} true if x is even; otherwise, false
 */
 function isEven( x ) {

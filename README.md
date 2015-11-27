@@ -23,7 +23,7 @@ var validate = require( 'validate.io-typed-array-function' );
 <a name="validate"></a>
 #### validate( fcn, value )
 
-Validates if a `value` is an [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`. For an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test. It returns `false` otherwise.
+Validates if a `value` is a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test. It returns `false` otherwise.
 
 ``` javascript
 var arr1 = [ 1, 3, 5, 7 ],
@@ -46,11 +46,11 @@ __Note__: the method will return `false` for an empty `array`.
 ===
 ### Create
 
-To facilitate using [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) validation functions within an application, a method to create minimal [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) validation functions is provided.
+To facilitate using [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) validation functions within an application, a method to create minimal [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) validation functions is provided.
 
 #### validate.create( fcn )
 
-Creates a validator `function` which validates whether a `value` is an  [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for which all elements pass the test given by the supplied `function`.
+Creates a validation `function` which validates whether a `value` is a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`.
 
 ``` javascript
 var isOddArray = validate.create( isOdd ),
@@ -74,7 +74,7 @@ A lower-level API is provided which forgoes some of the guarantees of the above 
 
 #### validate.raw( fcn, value )
 
-Validates if a `value` is an [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`. For an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test and `false` otherwise.
+Validates if a `value` is a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test and `false` otherwise.
 
 ``` javascript
 var arr = [ 1, 1, 1, 1, 1 ]
