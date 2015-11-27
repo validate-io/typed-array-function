@@ -1,0 +1,52 @@
+{
+  "name": "validate.io-typed-array-function",
+  "version": "0.0.0",
+  "description": "Validates if every element of a typed array passes a test condition.",
+  "author": {
+    "name": "Philipp Burckhardt",
+    "email": "pburckhardt@outlook.com"
+  },
+  "contributors": [
+    {
+      "name": "Philipp Burckhardt",
+      "email": "pburckhardt@outlook.com"
+    }
+  ],
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "codecov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/validate-io/typed-array-function.git"
+  },
+  "keywords": [
+    "validate.io",
+    "validate",
+    "validation",
+    "validator",
+    "valid",
+    "typed array",
+    "test",
+    "function"
+  ],
+  "bugs": {
+    "url": "https://github.com/validate-io/typed-array-function/issues"
+  },
+  "dependencies": {
+    "validate.io-function": "^1.0.2",
+    "validate.io-typed-array": "^1.0.0"
+  },
+  "devDependencies": {
+    "@kgryte/noop": "^1.0.0",
+    "chai": "3.x.x",
+    "codecov.io": "^0.1.5",
+    "istanbul": "^0.3.0",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x",
+    "mocha": "2.x.x"
+  },
+  "license": "MIT"
+}
