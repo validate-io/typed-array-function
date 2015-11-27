@@ -41,8 +41,6 @@ var out = validate( isOdd, arr2 );
 
 ```
 
-__Note__: the method will return `false` for an empty `array`.
-
 ===
 ### Create
 
@@ -89,6 +87,8 @@ function isOdd( x ) {
 
 ## Notes
 
+* 	A provided test function should accept a single argument: a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) element. If the [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) element satisfies a test condition, the function should return `true`; otherwise, the function should return `false`.
+*	The validation functions will return `false` for an empty [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays).
 *	The `.create()` method uses dynamic code evaluation. Beware when using it in the browser as it may violate your [content security policy](https://developer.mozilla.org/en-US/docs/Web/Security/CSP) (CSP).
 
 
