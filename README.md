@@ -23,7 +23,7 @@ var validate = require( 'validate.io-typed-array-function' );
 <a name="validate"></a>
 #### validate( fcn, value )
 
-Validates if every element of a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) passes a test condition. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test. It returns `false` otherwise.
+Validates if every element of a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) passes a test condition. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test and `false` otherwise.
 
 ``` javascript
 var arr1 = new Int32Array( [ 1, 3, 5, 7 ] ),
