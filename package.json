@@ -1,6 +1,6 @@
 {
   "name": "validate.io-typed-array-function",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Validates if every element of a typed array passes a test condition.",
   "author": {
     "name": "Philipp Burckhardt",
