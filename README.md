@@ -55,10 +55,10 @@ var isOddTypedArray = validate.create( isOdd ),
 	out;
 
 out = isOddTypedArray( new Int32Array( [1,3,5] ) );
-// returns true;
+// returns true
 
 out = isOddTypedArray( new Int32Array( [2,3,4] ) );
-// returns false;
+// returns false
 
 function isOdd( x ) {
 	return x % 2 === 1;
@@ -78,7 +78,7 @@ Validates if every element of a [`typed array`](https://developer.mozilla.org/en
 var arr = new Int16Array( [ 1, 1, 1, 1, 1 ] );
 
 var out = validate.raw( isOdd, arr );
-// returns true;
+// returns true
 
 function isOdd( x ) {
 	return x % 2 === 1;
