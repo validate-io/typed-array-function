@@ -1,4 +1,4 @@
-Validate Typed Array Function
+Typed Array Function
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -23,14 +23,14 @@ var validate = require( 'validate.io-typed-array-function' );
 <a name="validate"></a>
 #### validate( fcn, value )
 
-Validates if a `value` is a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test. It returns `false` otherwise.
+Validates if every element of a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) passes a test condition. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test. It returns `false` otherwise.
 
 ``` javascript
-var arr1 = [ 1, 3, 5, 7 ],
-	arr2 = [ 3, 5, 'c' ];
+var arr1 = new Int32Array( [ 1, 3, 5, 7 ] ),
+	arr2 = new Int32Array( [ 3, 5, 6, 8 ] );
 
 function isOdd( x ) {
-	return ( typeof x === 'number' && x % 2 === 1 ) ? true : false;
+	return x % 2 === 1;
 }
 
 var out = validate( isOdd, arr1 );
@@ -48,20 +48,20 @@ To facilitate using [`typed array`](https://developer.mozilla.org/en-US/docs/Web
 
 #### validate.create( fcn )
 
-Creates a validation `function` which validates whether a `value` is a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`.
+Creates a validation `function` which validates whether every element of a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) passes a test condition.
 
 ``` javascript
-var isOddArray = validate.create( isOdd ),
+var isOddTypedArray = validate.create( isOdd ),
 	out;
 
-out = isOddArray( [1,3,5] );
+out = isOddTypedArray( new Int32Array( [1,3,5] ) );
 // returns true;
 
-out = isOddArray( [2,3,4] );
+out = isOddTypedArray( new Int32Array( [2,3,4] ) );
 // returns false;
 
 function isOdd( x ) {
-	return ( typeof x === 'number' && x % 2 === 1 ) ? true : false;
+	return x % 2 === 1;
 }
 ```
 
@@ -72,16 +72,16 @@ A lower-level API is provided which forgoes some of the guarantees of the above 
 
 #### validate.raw( fcn, value )
 
-Validates if a `value` is a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) for which all elements pass the test given by the supplied `function`. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test and `false` otherwise.
+Validates if every element of a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) passes a test condition. Given an input [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function returns `true` if all elements pass the test and `false` otherwise.
 
 ``` javascript
-var arr = [ 1, 1, 1, 1, 1 ]
+var arr = new Int16Array( [ 1, 1, 1, 1, 1 ] );
 
 var out = validate.raw( isOdd, arr );
 // returns true;
 
 function isOdd( x ) {
-	return ( typeof x === 'number' && x % 2 === 1 ) ? true : false;
+	return x % 2 === 1;
 }
 ```
 
@@ -98,7 +98,7 @@ function isOdd( x ) {
 var validateTypedArray = require( 'validate.io-typed-array-function' );
 
 function isEven( x ) {
-	return ( typeof x === 'number' && x % 2 === 0 ) ? true : false;
+	return x % 2 === 0;
 }
 
 var arr1, arr2,

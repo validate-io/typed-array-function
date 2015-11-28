@@ -80,7 +80,7 @@ describe( 'create apply', function tests() {
 		assert.strictEqual( out, false );
 	});
 
-	it( 'should return a function should return false if provided an empty typed array', function test() {
+	it( 'should return a function which returns false if provided an empty typed array', function test() {
 		var validate,
 			actual;
 

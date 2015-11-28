@@ -2,17 +2,13 @@
 
 /**
 * FUNCTION: isEven( x )
-*	Checks whether an input value is an even number.
+*	Checks whether an input number is even.
 *
-* @param {*} x - input value
+* @param {Number} x - input number
 * @returns {Boolean} true if x is even; otherwise, false
 */
 function isEven( x ) {
-	if ( typeof x === 'number' && x % 2 === 0 ) {
-		return true;
-	} else {
-		return false;
-	}
+	return x % 2 === 0;
 } // end FUNCTION isEven()
 
 
